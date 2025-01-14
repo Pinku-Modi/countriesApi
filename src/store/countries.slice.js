@@ -5,7 +5,8 @@ const countrySlice = createSlice({
     name: "countries",
 
     initialState: {
-        region,
+        region: "All_Countries",
+        country:"",
         countries:[]
     },
 
@@ -14,11 +15,15 @@ const countrySlice = createSlice({
             state.region= action.payload
         },
 
+        SET_COUNTRY: (state, action) =>{
+            state.country= action.payload
+        },
+
         SET_COUNTRIES: (state, action) => {
             state.countries= action.payload
         }
     }
 })
 
-export const { SET_REGION, SET_COUNTRIES } = countrySlice.actions;
+export const { SET_REGION, SET_COUNTRY, SET_COUNTRIES } = countrySlice.actions;
 export default countrySlice.reducer;
