@@ -4,7 +4,7 @@ import HomePageCountries from "../components/HomePageCountries.jsx"
 
 export default function HomePage(){
     return (
-        <div>
+        <div className="bg-[rgba(250,250,250,1)]">
             <Navbar />
             <MidSection />
             <HomePageCountries />
