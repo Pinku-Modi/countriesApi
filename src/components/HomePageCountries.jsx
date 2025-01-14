@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 import inititialFetch from "../hooks/initialFetch";
 import CountriesCard from "./countriesCard";
+import { useDispatch } from "react-redux"
+import { SET_COUNTRIES } from "../store/countries.slice.js"
+
 
 export default function HomePageCountries() {
     const [countries, setCountries] = useState([])
+    const dispatch= useDispatch()
 
     useEffect(() => {
         async function fetchCountries() {
             const countriesData = await inititialFetch()
 
             if (countriesData.length !== 0) setCountries(countriesData)
+            dispatch(SET_COUNTRIES(countriesData))
         }
         fetchCountries()
     }, [])
