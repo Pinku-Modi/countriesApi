@@ -5,7 +5,7 @@ const countrySlice = createSlice({
     name: "countries",
 
     initialState: {
-        region: "All_Countries",
+        region: "All_Region",
         country:"",
         countries:[]
     },
