@@ -14,7 +14,7 @@ export default function CardCountries(props) {
             </div>
 
             <div className="p-4 h-[180px] overflow-hidden">
-                <p className="font-semibold text-lg truncate cursor-pointer hover:underline mb-3" onClick={()=>navigate("/:")}>{props.name}</p>
+                <p className="font-semibold text-lg truncate cursor-pointer hover:underline mb-3" onClick={()=>navigate(`/${props.name}`)}>{props.name}</p>
                 <p className="text-sm text-gray-900 "><span className="font-semibold">Population:</span> {props.population.toLocaleString()}</p>
                 <p className="text-sm text-gray-900"><span className="font-semibold">Region:</span> {props.region}</p>
                 <p className="text-sm text-gray-900"><span className="font-semibold">Capital:</span> {props.capital}</p>

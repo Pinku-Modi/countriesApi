@@ -7,7 +7,7 @@ export default function countriesApiRoutes(){
   return (
     <Routes>
       <Route path="/" element={<HomePage />} /> 
-      <Route path="/:id" element={<CountryDescription />} /> 
+      <Route path="/:name" element={<CountryDescription />} /> 
     </Routes>
   )
 }
