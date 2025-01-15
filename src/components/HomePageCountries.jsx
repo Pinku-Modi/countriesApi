@@ -11,6 +11,7 @@ export default function HomePageCountries() {
     const countryFromStore = useSelector((state) => state.countries.countries)
     const regionFromStore = useSelector((state) => state.countries.region)
     const searchedCountryFromStore = useSelector((state) => state.countries.country)
+    let themeFromStore = useSelector((state) => state.theme.themes)
     // console.log(countryFromStore)
     // console.log(regionFromStore)
     // console.log(searchedCountryFromStore)
@@ -51,7 +52,7 @@ export default function HomePageCountries() {
     }, [countryFromStore, regionFromStore, searchedCountryFromStore])
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-5 md:gap-6 lg:gap-8 mx-4 my-5 bg-[rgba(250,250,250,1)]" >
+        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-5 md:gap-6 lg:gap-8 mx-4 my-5 {${themeFromStore === "dark" ? "text-white bg-[#201c1c]" : "bg-[rgba(250,250,250,1)] text-black" }`} >
             {countries.length !== 0 ? (
                 countries.map((country, index) => (
                     <CountriesCard key={index} image={country.flags.png} name={country.name.common} population={country.population} region={country.region} capital={country.capital ? country.capital[0] : "N/A"} />

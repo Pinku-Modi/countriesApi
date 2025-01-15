@@ -15,14 +15,14 @@ export default function Navbar() {
     return (
         <div className={`flex justify-between content-between px-12 py-5 ${themeFrromStore === "dark" ? "bg-black text-white" : "bg-white text-black"
             }`}>
-            <p className="font-bold text-2xl">Where in the world?</p>
-            <div className="flex justify-evenly content-center items-center gap-2 h-max w-max">
+            <p className="font-bold text-lg sm:text-lg md:text-xl lg:text-2xl">Where in the world?</p>
+            <div className="flex justify-evenly items-center gap-2 h-auto w-max">
                 {
                     (themeFrromStore === "dark") ?
-                        <img src={darkImage} alt="dark.img" className="h-8 cursor-pointer" onClick={handleChangeTheme} /> :
-                        <img src={lightImage} alt="light.img" className="h-8 cursor-pointer" onClick={handleChangeTheme} />
+                        <img src={darkImage} alt="dark.img" className="h-4 sm:h-5 md:h-6 lg:h-8 cursor-pointer" onClick={handleChangeTheme} /> :
+                        <img src={lightImage} alt="light.img" className="h-4 sm:h-5 md:h-6 lg:h-8 cursor-pointer" onClick={handleChangeTheme} />
                 }
-                <p className="font-bold text-lg">{themeFrromStore}</p>
+                <p className="font-bold text-lg sm:text-lg md:text-xl lg:text-2xl lg:gap-4">{themeFrromStore}</p>
             </div>
         </div>
     )
