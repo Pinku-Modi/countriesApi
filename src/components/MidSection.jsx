@@ -25,7 +25,7 @@ export default function MidSection() {
                 <input type="search" placeholder="Search for a country..." className="bg-white border-none focus:outline-none font-sans text-base font-[600] h-full w-full" onChange={(e)=>{handleSearch(e)}} value={searchInput}/>
             </div>
             <div className="mr-14 py-1 rounded-md w-1/6">
-                <select name="region" id="region" className="focus:outline-none h-full w-full rounded-md px-2" onChange={(e)=>handleRegionChange(e)} value={regionFromStore}>
+                <select name="region" id="region" className="focus:outline-none h-full w-full rounded-md px-2 text-black" onChange={(e)=>handleRegionChange(e)} value={regionFromStore}>
                     <option value="All_Region">All Regions</option>
                     <option value="America">America</option>
                     <option value="Africa">Africa</option>
