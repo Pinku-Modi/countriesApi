@@ -7,7 +7,7 @@ export default function HomePage() {
   const themeFromStore = useSelector((state) => state.theme.themes);
   
   return (
-    <div className={themeFromStore === "dark" ? "bg-[#201c1c] text-white" : "bg-[#f6f4f4] text-black"}>
+    <div className={`min-h-screen w-full ${themeFromStore === "dark" ? "bg-[#201c1c] text-white" : "bg-[#f6f4f4] text-black"}`}>
       <Navbar />
       <MidSection />
       <HomePageCountries />

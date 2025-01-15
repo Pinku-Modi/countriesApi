@@ -21,23 +21,25 @@ export default function MidSection() {
     }
 
     return (
-        <div className={`flex flex-col justify-center content-center gap-3 sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 xl:grid-cols-2 my-6 w-full`}>
-            <div className={`flex gap-2 w-2/4 min-h-min mx-0 sm:mx-6 md:mx-6 lg:mx-6 px-2 py-1 border rounded-md ${themeFromStore === "dark" ? "border-gray-950 bg-black" : "border-slate-200 bg-white"}`}>
-                {
-                    (themeFromStore === "dark") ? <img src={SearchWhite} alt="search icon" className="h-8" /> : <img src={SearchBlack} alt="search icon" className="h-8" />
-                }
+        <div className={`flex flex-col justify-center gap-3 sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 xl:grid-cols-2 my-3 md:my-6 lg:my-6 w-full`}>
+            <div className="flex justify-center md:justify-start lg:justify-start">
+                <div className={`flex justify-center items-center gap-2 w-5/6 sm:w-3/4 md:w-2/4 lg:w-2/4 min-h-min m-0 sm:ml-6 md:ml-6 lg:ml-6 px-2 py-1 border rounded-md ${themeFromStore === "dark" ? "border-gray-950 bg-black" : "border-slate-200 bg-white"}`}>
+                    {
+                        (themeFromStore === "dark") ? <img src={SearchWhite} alt="search icon" className="h-8" /> : <img src={SearchBlack} alt="search icon" className="h-8" />
+                    }
 
-                <input
-                    type="search"
-                    placeholder="Search for a country..."
-                    className={`border-none focus:outline-none font-sans text-base font-[600] h-full w-full ${themeFromStore === "dark" ? "bg-black text-white" : "bg-white text-black"}`}
-                    onChange={(e) => { handleSearch(e) }}
-                    value={searchInput}
-                />
+                    <input
+                        type="search"
+                        placeholder="Search for a country..."
+                        className={`border-none focus:outline-none font-sans text-base font-[600] h-full w-full ${themeFromStore === "dark" ? "bg-black text-white" : "bg-white text-black"}`}
+                        onChange={(e) => { handleSearch(e) }}
+                        value={searchInput}
+                    />
+                </div>
             </div>
 
-            <div className="w-full flex justify-center p-0 sm:justify-end md:justify-end md:px-6 lg:justify-end lg:px-10">
-                <div className="py-1 rounded-md w-3/6 sm:w-3/6 md:w-2/6 lg:w-2/6">
+            <div className="w-full flex justify-center p-0 sm:justify-center md:justify-end md:px-6 lg:justify-end lg:px-10">
+                <div className="py-1 rounded-md w-5/6 sm:w-3/4 md:w-2/4 lg:w-2/4">
                     <select name="region" id="region" className={`focus:outline-none h-full w-full py-2 rounded-md px-2 ${themeFromStore === "dark" ? "bg-black text-white" : "bg-white text-black"}`} onChange={(e) => handleRegionChange(e)} value={regionFromStore}>
                         <option value="All_Region">All Regions</option>
                         <option value="Africa">Africa</option>

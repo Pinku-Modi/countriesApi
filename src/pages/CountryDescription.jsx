@@ -34,33 +34,32 @@ export default function CountryDescription() {
             <Navbar />
             <div>
                 <div className={`flex h-[36px] w-[90px] justify-center items-center my-3 cursor-pointer ml-4 p-2 gap-2 rounded-md ${classButton}`} onClick={() => navigate("/")}>
-                    {
-                        (themeFromStore === "dark") ? <img src={backWhiteImage} alt="Back" className="h-full" /> : <img src={backBlackImage} alt="Back" className="h-full" />
-                    }
+                    { themeFromStore === "dark" ? <img src={backWhiteImage} alt="Back" className="h-full" /> : <img src={backBlackImage} alt="Back" className="h-full" /> }
                     <button className="font-semibold">Back</button>
                 </div>
 
                 {country ? (
                     <div className="grid grid-cols-1 justify-center sm:flex sm:justify-center md:flex md:justify-evenly md:flex-wrap lg:flex lg:justify-evenly lg:flex-wrap mt-6 sm:mt-10 md:mt-13 lg:mt-16 w-full">
-                        <img src={country.flags.png} alt={country.name.common} className="w-full px-4 sm:w-2/4 md:w-1/3 lg:w-1/3" />
-                        <div className={`grid grid-cols-1 truncate w-full md:w-2/4 lg:w-2/4 min-h-min px-4 py-3 ${classBackground}`}>
-                            <p className="countryName font-bold text-2xl">{country.name.common}</p>
-                            <div className="grid grid-cols-1 justify-evenly sm:flex sm:gap-20 md:flex md:gap-22 lg:flex lg:gap-24 mt-6">
+                        <img src={country.flags.png} alt={country.name.common} className="w-full sm:w-2/4 md:w-1/3 lg:w-1/3 px-4 max-w-full" />
+
+                        <div className={`grid grid-cols-1 w-full md:w-2/4 lg:w-2/4 min-h-min px-4 py-3 ${classBackground}`}>
+                            <p className="countryName font-bold text-2xl sm:text-3xl">{country.name.common}</p>
+                            <div className="grid grid-cols-1 justify-between sm:flex sm:gap-20 md:flex md:gap-22 lg:flex lg:gap-24 truncate mt-6">
                                 <div>
-                                    <p><span className="font-semibold text-lg">Native Name:</span> {country.name.nativeName ? Object.values(country.name.nativeName)[0].common : ''}</p>
-                                    <p><span className="font-semibold text-lg">Population:</span> {country.population}</p>
-                                    <p><span className="font-semibold text-lg">Region:</span> {country.region}</p>
-                                    <p><span className="font-semibold text-lg">Sub Region:</span> {country.subregion}</p>
-                                    <p><span className="font-semibold text-lg">Capital:</span> {country.capital ? country.capital[0] : ''}</p>
+                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Native Name:</span> {country.name.nativeName ? Object.values(country.name.nativeName)[0].common : ''}</p>
+                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Population:</span> {country.population}</p>
+                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Region:</span> {country.region}</p>
+                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Sub Region:</span> {country.subregion}</p>
+                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Capital:</span> {country.capital ? country.capital[0] : ''}</p>
                                 </div>
                                 <div>
-                                    <p><span className="font-semibold text-lg">Top Level Domain:</span> {country.tld ? country.tld[0] : 'N/A'}</p>
-                                    <p><span className="font-semibold text-lg">Currencies:</span> {country.currencies ? Object.values(country.currencies).map(curr => curr.name).join(', ') : ''}</p>
-                                    <p><span className="font-semibold text-lg">Languages:</span> {country.languages ? Object.values(country.languages).join(', ') : ''}</p>
+                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Top Level Domain:</span> {country.tld ? country.tld[0] : 'N/A'}</p>
+                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Currencies:</span> {country.currencies ? Object.values(country.currencies).map(curr => curr.name).join(', ') : ''}</p>
+                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Languages:</span> {country.languages ? Object.values(country.languages).join(', ') : ''}</p>
                                 </div>
                             </div>
-                            <div className="mt-12">
-                                <span className="font-semibold text-lg">Border Countries:</span> {country.borders ? country.borders.join(', ') : 'None'}
+                            <div className="mt-12 truncate">
+                                <span className="font-semibold text-base md:text-lg lg:text-lg">Border Countries:</span> {country.borders ? country.borders.join(', ') : 'None'}
                             </div>
                         </div>
                     </div>
