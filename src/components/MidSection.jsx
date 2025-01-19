@@ -74,7 +74,9 @@ export default function MidSection() {
                             label="Region"
                             onChange={handleChange}
                         >
+                            <MenuItem value="All Regions">All Regions</MenuItem>
                             <MenuItem value="Africa">Africa</MenuItem>
+                            <MenuItem value="Africa">Americas</MenuItem>
                             <MenuItem value="Asia">Asia</MenuItem>
                             <MenuItem value="Europe">Europe</MenuItem>
                             <MenuItem value="Oceania">Oceania</MenuItem>
