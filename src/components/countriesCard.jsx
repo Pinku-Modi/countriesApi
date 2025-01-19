@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux"
 
 // materialUI import
-import Card from "@mui/material/card"
-import CardActions from '@mui/material/CardActions';
+import Card from "@mui/material/Card"
+// import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -44,10 +44,8 @@ export default function CardCountries(props) {
         // materialUi implementation for cards
 
         <div className={`cardContainer`}>
-            <Card sx={{ maxWidth: 345 }} className={`${themeFromStore === "dark" ?"bg-black text-white" : "bg-white text-black" }`}>
-                <CardMedia sx={{ height: 160 }}
-                    image={props.image}
-                    title="img" />
+            <Card sx={{ maxWidth: 345 }} className={`${themeFromStore === "dark" ? "bg-black text-white" : "bg-white text-black"}`}>
+                <CardMedia sx={{ height: 160 }} image={props.image} title="img" />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div" onClick={() => navigate(`/${props.name}`)} className="cursor-pointer hover:underline">
                         {props.name}
@@ -61,9 +59,8 @@ export default function CardCountries(props) {
                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                         <span className="font-semibold">Capital:</span> {props.capital}
                     </Typography>
-                </CardContent >
+                </CardContent>
             </Card>
         </div>
-
     );
 }
