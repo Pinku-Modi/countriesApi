@@ -12,6 +12,8 @@ import Select from '@mui/material/Select'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
+import TextField from "@mui/material/TextField"
+import Grid from "@mui/material/Grid"
 
 export default function MidSection() {
 
@@ -53,8 +55,8 @@ export default function MidSection() {
                         </div>
                     </div> */}
 
-            <div className="w-full flex justify-center p-0 sm:justify-center md:justify-end md:px-6 lg:justify-end lg:px-10">
-                {/* <div className="py-1 rounded-md w-5/6 sm:w-3/4 md:w-2/4 lg:w-2/4">
+            {/* <div className="w-full flex justify-center p-0 sm:justify-center md:justify-end md:px-6 lg:justify-end lg:px-10"> */}
+            {/* <div className="py-1 rounded-md w-5/6 sm:w-3/4 md:w-2/4 lg:w-2/4">
             <select name="region" id="region" className={`focus:outline-none h-full w-full py-2 rounded-md px-2 ${themeFromStore === "dark" ? "bg-black text-white" : "bg-white text-black"}`} onChange={(e) => handleRegionChange(e)} value={regionFromStore}>
             <option value="All_Region">All Regions</option>
             <option value="Africa">Africa</option>
@@ -64,26 +66,43 @@ export default function MidSection() {
             </select>
             </div> */}
 
-                <Box sx={{ minWidth: 140 }}>
-                    <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">Region</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value="region"
-                            label="Region"
-                            onChange={handleChange}
-                        >
-                            <MenuItem value="All Regions">All Regions</MenuItem>
-                            <MenuItem value="Africa">Africa</MenuItem>
-                            <MenuItem value="Africa">Americas</MenuItem>
-                            <MenuItem value="Asia">Asia</MenuItem>
-                            <MenuItem value="Europe">Europe</MenuItem>
-                            <MenuItem value="Oceania">Oceania</MenuItem>
-                        </Select>
-                    </FormControl>
-                </Box>
-            </div>
+            <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
+                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display:"flex" , justifyContent:"flex-start", paddingLeft:5, alignItems:"Center" }}>
+                    <TextField sx={{ minWidth: 200 }}
+                        label="Search input"
+                        onChange={handleSearch}
+                        value={searchInput}
+                        slotProps={{
+                            input: {
+                                type: 'search',
+                            }
+                        }}
+                    />
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display:"flex" , justifyContent:"flex-end", paddingRight:5, alignItems:"Center"  }}>
+                    <Box sx={{ minWidth: 200 }}>
+                        <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">Region</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value="region"
+                                label="Region"
+                                onChange={handleChange}
+                            >
+                                <MenuItem value="All Regions">All Regions</MenuItem>
+                                <MenuItem value="Africa">Africa</MenuItem>
+                                <MenuItem value="Africa">Americas</MenuItem>
+                                <MenuItem value="Asia">Asia</MenuItem>
+                                <MenuItem value="Europe">Europe</MenuItem>
+                                <MenuItem value="Oceania">Oceania</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </Box>
+                </Grid>
+            </Grid>
+            {/* </div> */}
         </div>
     );
 }

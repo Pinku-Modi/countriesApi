@@ -11,6 +11,8 @@ import backWhiteImage from "../assets/left-arrow-White.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import Grid from "@mui/material/Grid"
+import Typography from "@mui/material/Typography";
 
 export default function CountryDescription() {
     const { name } = useParams();
@@ -44,47 +46,106 @@ export default function CountryDescription() {
                     <button className="font-semibold">Back</button>
                 </div>
                 {country ? (
-                    /* 
-                    <div className="grid grid-cols-1 justify-center sm:flex sm:justify-center md:flex md:justify-evenly md:flex-wrap lg:flex lg:justify-evenly lg:flex-wrap mt-6 sm:mt-10 md:mt-13 lg:mt-16 w-full">
-                        <img src={country.flags.png} alt={country.name.common} className="w-full sm:w-2/4 md:w-1/3 lg:w-1/3 px-4 max-w-full" />
 
-                        <div className={`grid grid-cols-1 w-full md:w-2/4 lg:w-2/4 min-h-min px-4 py-3 ${classBackground}`}>
-                            <p className="countryName font-bold text-2xl sm:text-3xl">{country.name.common}</p>
-                            <div className="grid grid-cols-1 justify-between sm:flex sm:gap-20 md:flex md:gap-22 lg:flex lg:gap-24 truncate mt-6">
-                                <div>
-                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Native Name:</span> {country.name.nativeName ? Object.values(country.name.nativeName)[0].common : ''}</p>
-                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Population:</span> {country.population}</p>
-                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Region:</span> {country.region}</p>
-                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Sub Region:</span> {country.subregion}</p>
-                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Capital:</span> {country.capital ? country.capital[0] : ''}</p>
-                                </div>
-                                <div>
-                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Top Level Domain:</span> {country.tld ? country.tld[0] : 'N/A'}</p>
-                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Currencies:</span> {country.currencies ? Object.values(country.currencies).map(curr => curr.name).join(', ') : ''}</p>
-                                    <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Languages:</span> {country.languages ? Object.values(country.languages).join(', ') : ''}</p>
-                                </div>
-                            </div>
-                            <div className="mt-12 truncate">
-                                <span className="font-semibold text-base md:text-lg lg:text-lg">Border Countries:</span> {country.borders ? country.borders.join(', ') : 'None'}
-                            </div>
-                        </div>
-                    </div> */
+                    // <div className="grid grid-cols-1 justify-center sm:flex sm:justify-center md:flex md:justify-evenly md:flex-wrap lg:flex lg:justify-evenly lg:flex-wrap mt-6 sm:mt-10 md:mt-13 lg:mt-16 w-full">
+                    //     <img src={country.flags.png} alt={country.name.common} className="max-h-[300px] sm:w-2/4 md:w-1/3 lg:w-1/3 px-5 pb-4 sm:pb-4 md:pb-0 lg:pb-0" />
+
+                    //     <div className={`grid grid-cols-1 w-full md:w-2/4 lg:w-2/4 min-h-min px-4 py-3 ${classBackground}`}>
+                    //         <p className="countryName font-bold text-2xl sm:text-3xl">{country.name.common}</p>
+                    //         <div className="grid grid-cols-1 justify-between sm:flex sm:gap-20 md:flex md:gap-22 lg:flex lg:gap-24 truncate mt-6">
+                    //             <div>
+                    //                 <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Native Name:</span> {country.name.nativeName ? Object.values(country.name.nativeName)[0].common : ''}</p>
+                    //                 <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Population:</span> {country.population}</p>
+                    //                 <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Region:</span> {country.region}</p>
+                    //                 <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Sub Region:</span> {country.subregion}</p>
+                    //                 <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Capital:</span> {country.capital ? country.capital[0] : ''}</p>
+                    //             </div>
+                    //             <div>
+                    //                 <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Top Level Domain:</span> {country.tld ? country.tld[0] : ''}</p>
+                    //                 <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Currencies:</span> {country.currencies ? Object.values(country.currencies).map(curr => curr.name).join(', ') : ''}</p>
+                    //                 <p className="truncate"><span className="font-semibold text-base md:text-lg lg:text-lg">Languages:</span> {country.languages ? Object.values(country.languages).join(', ') : ''}</p>
+                    //             </div>
+                    //         </div>
+                    //         <div className="mt-12 truncate">
+                    //             <span className="font-semibold text-base md:text-lg lg:text-lg">Border Countries:</span> {country.borders ? country.borders.join(', ') : 'None'}
+                    //         </div>
+                    //     </div>
+                    // </div> 
 
                     //  materialUI implementation
                     < div >
-                    < Fragment >
                         <CssBaseline />
-                        <Container maxWidth="sm">
-                            <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} />
+                        <Container sx={{ width: "full", paddingTop: 5 }}>
+                            <Grid container rowSpacing={4} columnSpacing={{ sm: 6, md: 6, lg: 4 }}>
+                                <Grid item sm={12} md={6} lg={6} >
+                                    <img src={country.flags.png} alt={country.name.common} className="w-[350px]"/>
+                                </Grid>
+                                <Grid item sm={12} md={6} lg={6} xl={6} >
+                                    <Typography gutterBottom variant="h4" sx={{
+                                        overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                    }} >
+                                        {country.name.common}
+                                    </Typography >
+                                    <Grid container rowSpacing={4} columnSpacing={{ md: 3, lg: 6, xl: 8 }}>
+                                        <Grid item sm={12} md={6} lg={6} xl={6}>
+                                            <Typography gutterBottom variant="h6" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                            }}>
+                                                Native Name: {country.name.nativeName ? Object.values(country.name.nativeName)[0].common : ''}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h6" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                            }}>
+                                                Population: {country.population}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h6" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                            }}>
+                                                Region: {country.region}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h6" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                            }}>
+                                                Sub-region: {country.subregion}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h6" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                            }}>
+                                                Capital: {country.capital ? country.capital[0] : ""}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item sm={12} md={6} lg={6} xl={6}>
+                                            <Typography gutterBottom variant="h6" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                            }}>
+                                                Top Level Domain: {country.tld ? country.tld[0] : ''}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h6" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                            }}>
+                                                Currencies: {country.currencies ? Object.values(country.currencies).map(curr => curr.name).join(', ') : ''}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h6" sx={{
+                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
+                                            }}>
+                                                Languages: {country.languages ? Object.values(country.languages).join(', ') : ''}
+                                            </Typography>
+                                        </Grid>
+                                    </Grid>
+                                    <Typography gutterBottom variant='h6' sx={{
+                                        overflow: "hidden", textoverflow: "ellipsis", whitSpace: "nowrap"
+                                    }}>
+                                        Border Countries: {country.borders ? country.borders.join(', ') : 'None'}
+                                    </Typography>
+                                </Grid>
+                            </Grid>
                         </Container>
-                    </Fragment>
                     </div>
-                
 
-            ) : (
-            <p>Loading...</p>
+                ) : (
+                    <p>Loading...</p>
                 )}
-        </div>
+            </div>
         </div >
     );
 }
