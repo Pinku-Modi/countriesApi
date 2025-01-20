@@ -6,6 +6,8 @@ import { SET_COUNTRIES } from "../store/countries.slice.js";
 
 // Material UI imports
 import Grid from '@mui/material/Grid';
+import Container from "@mui/material/Container"
+import { createTheme, ThemeProvider, useColorScheme } from "@mui/material/styles"
 
 export default function HomePageCountries() {
   const [countries, setCountries] = useState([]);
@@ -14,6 +16,8 @@ export default function HomePageCountries() {
   const regionFromStore = useSelector((state) => state.countries.region);
   const searchedCountryFromStore = useSelector((state) => state.countries.country);
   let themeFromStore = useSelector((state) => state.theme.themes);
+
+  const { mode, setMode } = useColorScheme() // materialUI component -> for themes settings
 
   useEffect(() => {
     async function fetchCountries() {
@@ -50,7 +54,8 @@ export default function HomePageCountries() {
   }, [countryFromStore, regionFromStore, searchedCountryFromStore]);
 
   return (
-    <div className={`mx-4 my-5 ${themeFromStore === "dark" ? "text-white bg-[#201c1c]" : "bg-[rgba(250,250,250,1)] text-black"}`}>
+    // <div className={`mx-4 my-5 ${themeFromStore === "dark" ? "text-white bg-[#201c1c]" : "bg-[rgba(250,250,250,1)] text-black"}`}>
+    <Container >
       {countries.length !== 0 ? (
         <Grid container spacing={3}>
           {countries.map((country, index) => (
@@ -68,6 +73,7 @@ export default function HomePageCountries() {
       ) : (
         <div>Loading...</div>
       )}
-    </div>
+    </Container>
+    // </div>
   );
 }
