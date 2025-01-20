@@ -3,6 +3,11 @@ import lightImage from "../assets/sun.svg"
 import { useSelector, useDispatch } from "react-redux"
 import { SET_THEME } from "../store/theme.slice.js"
 
+// import material UI
+import AppBar from "@mui/material/AppBar"
+import Toolbar from "@mui/material/Toolbar"
+import Typography from "@mui/material/Typography"
+
 export default function Navbar() {
 
     const dispatch = useDispatch()
@@ -19,7 +24,8 @@ export default function Navbar() {
             <div className="flex justify-evenly items-center gap-2 h-auto w-max">
                 {
                     (themeFrromStore === "dark") ?
-                        <img src={darkImage} alt="dark.img" className="h-4 sm:h-5 md:h-6 lg:h-8 cursor-pointer" onClick={handleChangeTheme} /> :
+                        <img s
+                        rc={darkImage} alt="dark.img" className="h-4 sm:h-5 md:h-6 lg:h-8 cursor-pointer" onClick={handleChangeTheme} /> :
                         <img src={lightImage} alt="light.img" className="h-4 sm:h-5 md:h-6 lg:h-8 cursor-pointer" onClick={handleChangeTheme} />
                 }
                 <p className="font-bold text-lg sm:text-lg md:text-xl lg:text-2xl lg:gap-4">{themeFrromStore}</p>
