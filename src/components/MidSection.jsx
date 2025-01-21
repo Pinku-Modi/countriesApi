@@ -65,9 +65,9 @@ export default function MidSection() {
             <option value="Oceania">Oceania</option>
             </select>
             </div> */}
-            <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ paddingY: 3, paddingX: 5, justifyItems:"center", justifyContent:"center" }}>
+            <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ paddingY: 3, paddingX: { xs:0, md:5, lg:5 } }}>
 
-                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display: "flex", justifyContent: "flex-start", paddingLeft: 5, alignItems: "center",  }}>
+                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display: "flex", justifyContent: { xs:"center", md:"flex-start", lg:"flex-start" }, paddingLeft: 5, alignItems: "center",  }}>
                     <TextField
                         sx={{
                             minWidth: 250,
@@ -99,7 +99,7 @@ export default function MidSection() {
                 </Grid>
 
 
-                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display: "flex", justifyContent: "flex-end", paddingRight: 5, alignItems: "center" }}>
+                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display: "flex", justifyContent: { xs:"center", md:"flex-end", lg:"flex-end" }, paddingRight: { xs:0, md:5,lg:5 }, alignItems: "center" }}>
                     <Box sx={{ minWidth: 250 }}>
                         <FormControl fullWidth>
                             <InputLabel id="region-select-label">Region</InputLabel>

@@ -8,11 +8,11 @@ import App from './App.jsx'
 
 
 createRoot(document.getElementById('root')).render(
-    <Provider store={store} defaultMode="dark">
-      <BrowserRouter>
-        <StrictMode>
-          <App />
-        </StrictMode>
-      </BrowserRouter>
-    </Provider>
+  <Provider store={store} >
+    <BrowserRouter>
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </BrowserRouter>
+  </Provider>
 )
