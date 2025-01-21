@@ -65,35 +65,63 @@ export default function MidSection() {
             <option value="Oceania">Oceania</option>
             </select>
             </div> */}
+            <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ paddingY: 3, paddingX: 5, justifyItems:"center", justifyContent:"center" }}>
 
-            <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
-                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display:"flex" , justifyContent:"flex-start", paddingLeft:5, alignItems:"Center" }}>
-                    <TextField sx={{ minWidth: 200 }}
+                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display: "flex", justifyContent: "flex-start", paddingLeft: 5, alignItems: "center",  }}>
+                    <TextField
+                        sx={{
+                            minWidth: 250,
+                            backgroundColor: themeFromStore === "dark" ? "#333" : "white",
+                            color: themeFromStore === "dark" ? "white" : "black", 
+                            borderRadius: 1,
+                            height: 45,
+                        }}
+
+                        InputProps={{
+                            style: {
+                                color: themeFromStore === "dark" ? "white" : "black",
+                            },
+                        }}
+                        
+                        InputLabelProps={{
+                            style: {
+                                color: themeFromStore === "dark" ? "white" : "black",
+                            },
+                        }}
+                        
+
                         label="Search input"
                         onChange={handleSearch}
                         value={searchInput}
-                        slotProps={{
-                            input: {
-                                type: 'search',
-                            }
-                        }}
+                        variant="outlined"
+                        size="small"
                     />
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display:"flex" , justifyContent:"flex-end", paddingRight:5, alignItems:"Center"  }}>
-                    <Box sx={{ minWidth: 200 }}>
+
+                <Grid item xs={12} sm={6} md={6} lg={6} sx={{ display: "flex", justifyContent: "flex-end", paddingRight: 5, alignItems: "center" }}>
+                    <Box sx={{ minWidth: 250 }}>
                         <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label">Region</InputLabel>
+                            <InputLabel id="region-select-label">Region</InputLabel>
                             <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value="region"
+                                labelId="region-select-label"
+                                id="region-select"
+                                value={regionFromStore}
                                 label="Region"
-                                onChange={handleChange}
+                                onChange={handleRegionChange}
+                                sx={{
+                                    backgroundColor: themeFromStore === "dark" ? "#333" : "white",
+                                    color: themeFromStore === "dark" ? "white" : "black",
+                                    borderRadius: 1,
+                                    height: 45,
+                                    '& .MuiSelect-icon': {
+                                        top: '50%',
+                                    }
+                                }}
                             >
-                                <MenuItem value="All Regions">All Regions</MenuItem>
+                                <MenuItem value="All_Region">All Regions</MenuItem>
                                 <MenuItem value="Africa">Africa</MenuItem>
-                                <MenuItem value="Africa">Americas</MenuItem>
+                                <MenuItem value="Americas">Americas</MenuItem>
                                 <MenuItem value="Asia">Asia</MenuItem>
                                 <MenuItem value="Europe">Europe</MenuItem>
                                 <MenuItem value="Oceania">Oceania</MenuItem>

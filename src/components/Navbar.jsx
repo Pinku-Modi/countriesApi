@@ -7,14 +7,15 @@ import { SET_THEME } from "../store/theme.slice.js"
 import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
+import { Box, IconButton } from "@mui/material"
 
 export default function Navbar() {
 
     const dispatch = useDispatch()
-    let themeFrromStore = useSelector((state) => state.theme.themes)
+    let themeFromStore = useSelector((state) => state.theme.themes)
 
     const handleChangeTheme = () => {
-        (themeFrromStore === "dark") ? dispatch(SET_THEME("light")) : dispatch(SET_THEME("dark"))
+        (themeFromStore === "dark") ? dispatch(SET_THEME("light")) : dispatch(SET_THEME("dark"))
     }
 
     return (
@@ -32,12 +33,26 @@ export default function Navbar() {
         //     </div>
         // </div>
 
-        <AppBar position="static" >
-            <Typography>
+        <AppBar position="static" sx={{ backgroundColor: themeFromStore === "dark" ? "black" : "white", color: themeFromStore === "dark" ? "white" : "black" }}>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                 Where in the world?
             </Typography>
-            
 
-        </AppBar>
+            <Box sx={{ display: 'flex', alignItems: 'center', paddingX: 5 }}>
+                <IconButton onClick={handleChangeTheme}>
+                    <img
+                        src={themeFromStore === "dark" ? darkImage : lightImage}
+                        alt="theme toggle"
+                        style={{ height: '24px', width: '24px' }}
+                    />
+                </IconButton>
+                <Typography variant="h6" >
+                    {themeFromStore == "dark" ? "dark" : "light"}
+                </Typography>
+            </Box>
+        </Toolbar>
+    </AppBar>
     )
 }

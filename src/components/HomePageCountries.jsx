@@ -57,7 +57,7 @@ export default function HomePageCountries() {
     // <div className={`mx-4 my-5 ${themeFromStore === "dark" ? "text-white bg-[#201c1c]" : "bg-[rgba(250,250,250,1)] text-black"}`}>
     <Container >
       {countries.length !== 0 ? (
-        <Grid container spacing={3}>
+        <Grid container spacing={3} >
           {countries.map((country, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <CountriesCard
@@ -65,7 +65,7 @@ export default function HomePageCountries() {
                 name={country.name.common}
                 population={country.population}
                 region={country.region}
-                capital={country.capital ? country.capital[0] : "N/A"}
+                capital={country.capital ? country.capital[0] : ""}
               />
             </Grid>
           ))}

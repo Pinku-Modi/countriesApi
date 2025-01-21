@@ -73,68 +73,50 @@ export default function CountryDescription() {
                     // </div> 
 
                     //  materialUI implementation
-                    < div >
-                        <CssBaseline />
+                    <div>
                         <Container sx={{ width: "full", paddingTop: 5 }}>
                             <Grid container rowSpacing={4} columnSpacing={{ sm: 6, md: 6, lg: 4 }}>
-                                <Grid item sm={12} md={6} lg={6} >
-                                    <img src={country.flags.png} alt={country.name.common} className="w-[350px]"/>
+                                <Grid item xs={12} sm={12} md={6} lg={6} sx={{ display: "flex", justifyContent: "center" }}>
+                                    <img src={country.flags.png} alt={country.name.common} className="max-w-full h-auto object-contain mx-auto"/>
                                 </Grid>
-                                <Grid item sm={12} md={6} lg={6} xl={6} >
-                                    <Typography gutterBottom variant="h4" sx={{
-                                        overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                    }} >
+
+                                <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+                                <Typography gutterBottom variant="h6" sx={{ fontWeight:"bold", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                         {country.name.common}
-                                    </Typography >
+                                    </Typography>
                                     <Grid container rowSpacing={4} columnSpacing={{ md: 3, lg: 6, xl: 8 }}>
-                                        <Grid item sm={12} md={6} lg={6} xl={6}>
-                                            <Typography gutterBottom variant="h6" sx={{
-                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                            }}>
+                                        
+                                        <Grid item xs={12} sm={12} md={6} lg={6}>
+                                            <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                                 Native Name: {country.name.nativeName ? Object.values(country.name.nativeName)[0].common : ''}
                                             </Typography>
-                                            <Typography gutterBottom variant="h6" sx={{
-                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                            }}>
-                                                Population: {country.population}
+                                            <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                                Population: {country.population.toLocaleString()}
                                             </Typography>
-                                            <Typography gutterBottom variant="h6" sx={{
-                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                            }}>
+                                            <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                                 Region: {country.region}
                                             </Typography>
-                                            <Typography gutterBottom variant="h6" sx={{
-                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                            }}>
+                                            <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                                 Sub-region: {country.subregion}
                                             </Typography>
-                                            <Typography gutterBottom variant="h6" sx={{
-                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                            }}>
-                                                Capital: {country.capital ? country.capital[0] : ""}
+                                            <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                                Capital: {country.capital ? country.capital[0] : 'N/A'}
                                             </Typography>
                                         </Grid>
-                                        <Grid item sm={12} md={6} lg={6} xl={6}>
-                                            <Typography gutterBottom variant="h6" sx={{
-                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                            }}>
-                                                Top Level Domain: {country.tld ? country.tld[0] : ''}
+
+                                        <Grid item xs={12} sm={12} md={6} lg={6}>
+                                        <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                                Top Level Domain: {country.tld ? country.tld[0] : 'N/A'}
                                             </Typography>
-                                            <Typography gutterBottom variant="h6" sx={{
-                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                            }}>
-                                                Currencies: {country.currencies ? Object.values(country.currencies).map(curr => curr.name).join(', ') : ''}
+                                            <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                                Currencies: {country.currencies ? Object.values(country.currencies).map(curr => curr.name).join(', ') : 'N/A'}
                                             </Typography>
-                                            <Typography gutterBottom variant="h6" sx={{
-                                                overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"
-                                            }}>
-                                                Languages: {country.languages ? Object.values(country.languages).join(', ') : ''}
+                                            <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                                Languages: {country.languages ? Object.values(country.languages).join(', ') : 'N/A'}
                                             </Typography>
                                         </Grid>
                                     </Grid>
-                                    <Typography gutterBottom variant='h6' sx={{
-                                        overflow: "hidden", textoverflow: "ellipsis", whitSpace: "nowrap"
-                                    }}>
+                                    <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                         Border Countries: {country.borders ? country.borders.join(', ') : 'None'}
                                     </Typography>
                                 </Grid>
