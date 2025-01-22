@@ -44,19 +44,20 @@ export default function CardCountries(props) {
         // materialUi implementation for cards
 
         <div className={`cardContainer`}>
-            <Card sx={{ minWidth: 250 }} className={`${themeFromStore === "dark" ? "bg-black text-white" : "bg-white text-black"}`}>
+            <Card sx={{
+                minWidth: 250, backgroundColor: themeFromStore === "dark" ? 'black' : 'white', color: themeFromStore === "dark" ? 'white' : 'black' }}>
                 <CardMedia sx={{ height: 160 }} image={props.image} title="img" />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div" onClick={() => navigate(`/${props.name}`)} className="cursor-pointer hover:underline" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {props.name}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    <Typography variant="body2" sx={{ color: themeFromStore === "dark" ? 'white' : 'black' }}>
                         <span className="font-semibold">Population:</span> {props.population.toLocaleString()}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    <Typography variant="body2" sx={{ color: themeFromStore === "dark" ? 'white' : 'black' }}>
                         <span className="font-semibold">Region:</span> {props.region}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    <Typography variant="body2" sx={{ color: themeFromStore === "dark" ? 'white' : 'black' }}>
                         <span className="font-semibold">Capital:</span> {props.capital}
                     </Typography>
                 </CardContent>

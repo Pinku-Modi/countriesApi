@@ -116,7 +116,7 @@ export default function CountryDescription() {
                                             </Typography>
                                         </Grid>
                                     </Grid>
-                                    <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                    <Typography gutterBottom variant="h6" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", marginY:"10px" }}>
                                         Border Countries: {country.borders ? country.borders.join(', ') : 'None'}
                                     </Typography>
                                 </Grid>

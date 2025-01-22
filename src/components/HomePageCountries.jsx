@@ -54,7 +54,7 @@ export default function HomePageCountries() {
     // <div className={`mx-4 my-5 ${themeFromStore === "dark" ? "text-white bg-[#201c1c]" : "bg-[rgba(250,250,250,1)] text-black"}`}>
     <Container >
       {countries.length !== 0 ? (
-        <Grid container spacing={3} sx={{display:"flex", justifyItems:"center"}} >
+        <Grid container spacing={3} sx={{display:"flex", justifyContent:"center", paddingRight:"12px"}} >
           {countries.map((country, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <CountriesCard
